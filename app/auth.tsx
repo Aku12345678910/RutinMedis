@@ -40,8 +40,9 @@ export default function AuthScreen() {
                 cancelLabel: 'Batalkan',
                 disableDeviceFallback: false,
             });
+            
             if (auth.success) {
-               router.replace('/home');
+               router.replace("/home");
             }else {
                 setError('Authentication failed. Please try again.');
             }
