@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, useRouter } from "expo-router";
 import { useEffect, useRef } from "react";
-import { Animated, Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Animated, Dimensions, Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 const {width} = Dimensions.get("window");
 
@@ -165,26 +165,33 @@ export default function HomeScreen() {
                         <Ionicons name="medical-outline" size={49} color="#ccc" />
                         <Text style={styles.emptyStateText}>Belum ada jadwal hari ini</Text>
                         <Link href="/medications/add">
-                        <TouchableOpacity>
-                            <Text>Tambah Jadwal</Text>
+                        <TouchableOpacity style={styles.addMedicationButton}>
+                            <Text style={styles.addMedicationButtonText}>Tambah Jadwal</Text>
                         </TouchableOpacity>
                         </Link>
                     </View>
                 ) : (
                     [].map((medications) => {
                         return (
-                            <View>
-                                <View>
+                            <View style={styles.doseCard}>
+                                <View 
+                                style={[
+                                    styles.doseBadge,
+                                // {
+                                //     backgroundColor:medications.color
+                                // }
+                                ]}
+                            >
                                     <Ionicons name="medical" size={24}/>
                                 </View>
-                                <View>
+                                <View style={styles.doseInfo}>
                                     <View>
-                                        <Text>name</Text>
-                                        <Text>doses</Text>
+                                        <Text style={styles.medicineName}>name</Text>
+                                        <Text style={styles.dosageInfo}>dosage</Text>
                                     </View>
-                                    <View>
+                                    <View style={styles.doseTime}>
                                         <Ionicons name="time-outline" size={16} color="#ccc"/>
-                                        <Text>time</Text>
+                                        <Text style={styles.timeText}>time</Text>
                                     </View>
                                 </View>
                                 {true ? (
@@ -203,6 +210,28 @@ export default function HomeScreen() {
                     })
                 )}
             </View>
+            <Modal visible={true} transparent={true} animationType="slide">
+                <View style={styles.modalOverlay}>
+                    <View style={styles.modalContent}>
+                        <Text style={styles.modalTitle}>Notifikasi</Text>
+                        <TouchableOpacity style={styles.closeButton}>
+                            <Ionicons name="close" size={24} color="#333" />
+                        </TouchableOpacity>
+                    </View>
+                    {[].map((medication)=>(
+                        <View style={styles.notificationItem}>
+                            <View style={styles.notificationIcon}>
+                                <Ionicons name="medical" size={24}/>
+                            </View>
+                            <View style={styles.notificationContent}>
+                                <Text style={styles.notificationTitle}>nama obat</Text>
+                                <Text style={styles.notificationMassage}>dosage obat</Text>
+                                <Text style={styles.notificationTime}>waktu</Text>
+                            </View>
+                        </View>
+                    ))}
+                </View>
+            </Modal>
         </ScrollView>
     );
 }
@@ -425,5 +454,64 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: '600',
         fontSize: 14,
+    },
+    modalOverlay:{
+        flex: 1,
+        backgroundColor:"rgba(0,0,0,0.5)",
+        justifyContent:"flex-end",
+    },
+    modalContent: {
+        backgroundColor: "white",
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        padding: 20,
+        maxHeight: "80%",
+    },
+    modalHeader: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 20,
+    },
+    modalTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    closeButton: {
+        padding: 5,
+    },
+    notificationItem: {
+        padding: 15,
+        borderRadius: 12,
+        borderBottomColor: "#f5f5f5",
+        marginBottom: 10,
+    },
+    notificationIcon: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: "#E8F5E9",
+        justifyContent: "center",
+        alignItems: "center",
+        marginRight: 15,
+    },
+    notificationContent: {
+        flex: 1,
+    },
+    notificationTitle: {
+        fontSize: 16,
+        fontWeight: '600',
+        color: '#333',
+        marginBottom: 4,
+    },
+    notificationMassage: {
+        fontSize: 14,
+        color: "#666",
+        marginBottom: 4,
+    },
+    notificationTime: {
+        fontSize: 12,
+        color: "#999",
     },
 });   
