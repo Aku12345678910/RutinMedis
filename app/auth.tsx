@@ -40,7 +40,7 @@ export default function AuthScreen() {
                 cancelLabel: 'Batalkan',
                 disableDeviceFallback: false,
             });
-            
+
             if (auth.success) {
                router.replace("/home");
             }else {
