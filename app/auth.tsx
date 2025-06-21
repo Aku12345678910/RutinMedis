@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as LocalAuthentication from "expo-local-authentication";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const {width} = Dimensions.get("window");
 
@@ -50,14 +50,14 @@ export default function AuthScreen() {
     };
 
     return (
-        <LinearGradient colors={['#4CAF50', '#2E7D32']} style={styles.container}>
+        <LinearGradient colors={['#F5F7FA','#34B8A2']} style={styles.container}>
             <View style={styles.content}>
                 <View style={styles.iconContainer}>
-                    <Ionicons name="medical" size={80} color="white"/>
+                    <Image
+                        source={require('../assets/logo.png')} 
+                        style={{ width: 200, height: 200, resizeMode: 'contain' }}
+                    />
                 </View>
-                <Text style={styles.title}>
-                    RutinMedis
-                </Text>
                 <Text style={styles.subtitle}>
                    Teman Setia Jadwal Obat Anda
                 </Text>
@@ -120,25 +120,14 @@ const styles = StyleSheet.create({
     iconContainer: {
         width: 120,
         height: 120,
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-        borderRadius: 60,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20,
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: 'white',
         marginBottom: 10,
-        textShadowColor: 'rgba(0, 0, 0, 0.2)',
-        textShadowOffset: { width: 1, height: 1 },
-        textShadowRadius: 3,
     },
     subtitle: {
-        fontSize: 18,
-        color: 'rgba(255, 255, 255, 0.9)',
-        marginBottom: 40,
+        fontSize: 13,
+        color: 'rgba(18, 100, 89, 0.9)',
+        marginBottom: 50,
         textAlign: 'center',
     },
     card: {
@@ -147,7 +136,7 @@ const styles = StyleSheet.create({
         padding: 30,
         width: width - 40,
         alignItems: 'center',
-        shadowColor: '#000',
+        shadowColor: '#1F355E',
         shadowOffset: { 
             width: 0,
             height: 2 
@@ -159,17 +148,17 @@ const styles = StyleSheet.create({
     welcomeText: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#1F355E',
         marginBottom: 10,
     },
     instruksiText: {
         fontSize: 16,
-        color: '#666',
+        color: '#1F355E',
         textAlign: 'center',
         marginBottom: 30,
     },
     button: {
-        backgroundColor: '#4CAF50',
+        backgroundColor: '#34B8A2',
         paddingVertical: 15,
         paddingHorizontal: 30,
         borderRadius: 12,

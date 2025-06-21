@@ -4,20 +4,20 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React, { useCallback, useState } from "react";
 import {
-    Alert,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Alert,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import {
-    DoseHistory,
-    Medication,
-    clearAllData,
-    getDoseHistory,
-    getMedications,
+  DoseHistory,
+  Medication,
+  clearAllData,
+  getDoseHistory,
+  getMedications,
 } from "../../utils/storage";
 
 type EnrichedDoseHistory = DoseHistory & { medication?: Medication };
@@ -108,7 +108,7 @@ export default function HistoryScreen() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={["#1a8e2d", "#146922"]}
+        colors={["#34B8A2","#34B8A2", "#1a8e2d"]}
         style={styles.headerGradient}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
@@ -120,7 +120,7 @@ export default function HistoryScreen() {
             onPress={() => router.back()}
             style={styles.backButton}
           >
-            <Ionicons name="chevron-back" size={28} color="#1a8e2d" />
+            <Ionicons name="chevron-back" size={28} color="#34B8A2" />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>History Log</Text>
         </View>
@@ -222,15 +222,15 @@ export default function HistoryScreen() {
                       <View
                         style={[
                           styles.statusBadge,
-                          { backgroundColor: "#E8F5E9" },
+                          { backgroundColor: "#34B8A2" },
                         ]}
                       >
                         <Ionicons
                           name="checkmark-circle"
                           size={16}
-                          color="#4CAF50"
+                          color="#1a8e2d"
                         />
-                        <Text style={[styles.statusText, { color: "#4CAF50" }]}>
+                        <Text style={[styles.statusText, { color: "white" }]}>
                           Taken
                         </Text>
                       </View>
@@ -244,7 +244,7 @@ export default function HistoryScreen() {
                         <Ionicons
                           name="close-circle"
                           size={16}
-                          color="#F44336"
+                          color="#34B8A2"
                         />
                         <Text style={[styles.statusText, { color: "#F44336" }]}>
                           Missed
@@ -366,7 +366,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "#34B8A2",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,

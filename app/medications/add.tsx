@@ -4,20 +4,20 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
-    Alert,
-    Dimensions,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Switch,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  Alert,
+  Dimensions,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from "react-native";
 import {
-    scheduleMedicationReminder,
-    scheduleRefillReminder,
+  scheduleMedicationReminder,
+  scheduleRefillReminder,
 } from "../../utils/notifications";
 import { addMedication } from "../../utils/storage";
 
@@ -129,7 +129,7 @@ export default function AddMedicationScreen() {
       setIsSubmitting(true);
 
       // Generate a random color
-      const colors = ["#4CAF50", "#2196F3", "#FF9800", "#E91E63", "#9C27B0"];
+      const colors = ["#34B8A2"];
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
       const medicationData = {
@@ -277,7 +277,7 @@ export default function AddMedicationScreen() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={["#1a8e2d", "#146922"]}
+        colors={["#34B8A2", "#6DD44B"]}
         style={styles.headerGradient}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
@@ -289,7 +289,7 @@ export default function AddMedicationScreen() {
             onPress={() => router.back()}
             style={styles.backButton}
           >
-            <Ionicons name="chevron-back" size={28} color="#1a8e2d" />
+            <Ionicons name="chevron-back" size={28} color="#6DD44B" />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>New Medication</Text>
         </View>
@@ -305,7 +305,7 @@ export default function AddMedicationScreen() {
               <TextInput
                 style={[styles.mainInput, errors.name && styles.inputError]}
                 placeholder="Medication Name"
-                placeholderTextColor="#999"
+                placeholderTextColor="#F5F7FA"
                 value={form.name}
                 onChangeText={(text) => {
                   setForm({ ...form, name: text });
@@ -322,7 +322,7 @@ export default function AddMedicationScreen() {
               <TextInput
                 style={[styles.mainInput, errors.dosage && styles.inputError]}
                 placeholder="Dosage (e.g., 500mg)"
-                placeholderTextColor="#999"
+                placeholderTextColor="#F5F7FA"
                 value={form.dosage}
                 onChangeText={(text) => {
                   setForm({ ...form, dosage: text });
@@ -356,12 +356,12 @@ export default function AddMedicationScreen() {
               onPress={() => setShowDatePicker(true)}
             >
               <View style={styles.dateIconContainer}>
-                <Ionicons name="calendar" size={20} color="#1a8e2d" />
+                <Ionicons name="calendar" size={20} color="#6DD44B" />
               </View>
               <Text style={styles.dateButtonText}>
                 Starts {form.startDate.toLocaleDateString()}
               </Text>
-              <Ionicons name="chevron-forward" size={20} color="#666" />
+              <Ionicons name="chevron-forward" size={20} color="#F5F7FA" />
             </TouchableOpacity>
 
             {showDatePicker && (
@@ -387,10 +387,10 @@ export default function AddMedicationScreen() {
                     }}
                   >
                     <View style={styles.timeIconContainer}>
-                      <Ionicons name="time-outline" size={20} color="#1a8e2d" />
+                      <Ionicons name="time-outline" size={20} color="#6DD44B" />
                     </View>
                     <Text style={styles.timeButtonText}>{time}</Text>
-                    <Ionicons name="chevron-forward" size={20} color="#666" />
+                    <Ionicons name="chevron-forward" size={20} color="#1F355E" />
                   </TouchableOpacity>
                 ))}
               </View>
@@ -429,7 +429,7 @@ export default function AddMedicationScreen() {
               <View style={styles.switchRow}>
                 <View style={styles.switchLabelContainer}>
                   <View style={styles.iconContainer}>
-                    <Ionicons name="notifications" size={20} color="#1a8e2d" />
+                    <Ionicons name="notifications" size={20} color="#34B8A2" />
                   </View>
                   <View>
                     <Text style={styles.switchLabel}>Reminders</Text>
@@ -443,7 +443,7 @@ export default function AddMedicationScreen() {
                   onValueChange={(value) =>
                     setForm({ ...form, reminderEnabled: value })
                   }
-                  trackColor={{ false: "#ddd", true: "#1a8e2d" }}
+                  trackColor={{ false: "#ddd", true: "#34B8A2" }}
                   thumbColor="white"
                 />
               </View>
@@ -456,7 +456,7 @@ export default function AddMedicationScreen() {
               <View style={styles.switchRow}>
                 <View style={styles.switchLabelContainer}>
                   <View style={styles.iconContainer}>
-                    <Ionicons name="reload" size={20} color="#1a8e2d" />
+                    <Ionicons name="reload" size={20} color="#34B8A2" />
                   </View>
                   <View>
                     <Text style={styles.switchLabel}>Refill Tracking</Text>
@@ -477,7 +477,7 @@ export default function AddMedicationScreen() {
                       });
                     }
                   }}
-                  trackColor={{ false: "#ddd", true: "#1a8e2d" }}
+                  trackColor={{ false: "#ddd", true: "#34B8A2" }}
                   thumbColor="white"
                 />
               </View>
@@ -491,7 +491,7 @@ export default function AddMedicationScreen() {
                           errors.currentSupply && styles.inputError,
                         ]}
                         placeholder="Current Supply"
-                        placeholderTextColor="#999"
+                        placeholderTextColor="#F5F7FA"
                         value={form.currentSupply}
                         onChangeText={(text) => {
                           setForm({ ...form, currentSupply: text });
@@ -514,7 +514,7 @@ export default function AddMedicationScreen() {
                           errors.refillAt && styles.inputError,
                         ]}
                         placeholder="Alert at"
-                        placeholderTextColor="#999"
+                        placeholderTextColor="#F5F7FA"
                         value={form.refillAt}
                         onChangeText={(text) => {
                           setForm({ ...form, refillAt: text });
@@ -540,7 +540,7 @@ export default function AddMedicationScreen() {
               <TextInput
                 style={styles.textArea}
                 placeholder="Add notes or special instructions..."
-                placeholderTextColor="#999"
+                placeholderTextColor="#F5F7FA"
                 value={form.notes}
                 onChangeText={(text) => setForm({ ...form, notes: text })}
                 multiline
@@ -561,7 +561,7 @@ export default function AddMedicationScreen() {
             disabled={isSubmitting}
           >
             <LinearGradient
-              colors={["#1a8e2d", "#146922"]}
+              colors={["#34B8A2", "#6DD44B"]}
               style={styles.saveButtonGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
@@ -587,7 +587,7 @@ export default function AddMedicationScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#F5F7FA",
   },
   headerGradient: {
     position: "absolute",
@@ -614,7 +614,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: "#000",
+    shadowColor: "#F5F7FA",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -638,13 +638,13 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#1a1a1a",
+    color: "#1F355E",
     marginBottom: 15,
     marginTop: 10,
   },
   mainInput: {
     fontSize: 20,
-    color: "#333",
+    color: "#1F355E",
     padding: 15,
   },
   optionsGrid: {
@@ -660,7 +660,7 @@ const styles = StyleSheet.create({
     margin: 5,
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "#F5F7FA",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
@@ -668,14 +668,14 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   selectedOptionCard: {
-    backgroundColor: "#1a8e2d",
-    borderColor: "#1a8e2d",
+    backgroundColor: "#F5F7FA",
+    borderColor: "#F5F7FA",
   },
   optionIcon: {
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#F5F7FA",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 10,
@@ -686,7 +686,7 @@ const styles = StyleSheet.create({
   optionLabel: {
     fontSize: 14,
     fontWeight: "600",
-    color: "#333",
+    color: "#1F355E",
     textAlign: "center",
   },
   selectedOptionLabel: {
@@ -695,7 +695,7 @@ const styles = StyleSheet.create({
   durationNumber: {
     fontSize: 24,
     fontWeight: "700",
-    color: "#1a8e2d",
+    color: "#6DD44B",
     marginBottom: 5,
   },
   selectedDurationNumber: {
@@ -706,8 +706,8 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
-    shadowColor: "#000",
+    borderColor: "#F5F7FA",
+    shadowColor: "#1F355E",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 8,
@@ -721,8 +721,8 @@ const styles = StyleSheet.create({
     padding: 15,
     marginTop: 15,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
-    shadowColor: "#000",
+    borderColor: "#F5F7FA",
+    shadowColor: "#1F355E",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 8,
@@ -732,7 +732,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#F5F7FA",
     justifyContent: "center",
     alignItems: "center",
     marginRight: 10,
@@ -747,8 +747,8 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 20,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
-    shadowColor: "#000",
+    borderColor: "#F5F7FA",
+    shadowColor: "#1F355E",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 8,
@@ -768,7 +768,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#F5F7FA",
     justifyContent: "center",
     alignItems: "center",
     marginRight: 15,
@@ -776,11 +776,11 @@ const styles = StyleSheet.create({
   switchLabel: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#333",
+    color: "#1F355E",
   },
   switchSubLabel: {
     fontSize: 13,
-    color: "#666",
+    color: "#1F355E",
     marginTop: 2,
   },
   inputRow: {
@@ -794,14 +794,14 @@ const styles = StyleSheet.create({
   input: {
     padding: 15,
     fontSize: 16,
-    color: "#333",
+    color: "#34B8A2",
   },
   textAreaContainer: {
     backgroundColor: "white",
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
-    shadowColor: "#000",
+    borderColor: "#34B8A2",
+    shadowColor: "#1F355E",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 8,
@@ -811,13 +811,13 @@ const styles = StyleSheet.create({
     height: 100,
     padding: 15,
     fontSize: 16,
-    color: "#333",
+    color: "#1F355E",
   },
   footer: {
     padding: 20,
     backgroundColor: "white",
     borderTopWidth: 1,
-    borderTopColor: "#e0e0e0",
+    borderTopColor: "#F5F7FA",
   },
   saveButton: {
     borderRadius: 16,
@@ -838,13 +838,13 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
+    borderColor: "white",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: "#E63544",
   },
   cancelButtonText: {
-    color: "#666",
+    color: "white",
     fontSize: 16,
     fontWeight: "600",
   },
@@ -869,7 +869,7 @@ const styles = StyleSheet.create({
   timesTitle: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#333",
+    color: "#1F355E",
     marginBottom: 10,
   },
   timeButton: {
@@ -880,8 +880,8 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 10,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
-    shadowColor: "#000",
+    borderColor: "#F5F7FA",
+    shadowColor: "#1F355E",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 8,

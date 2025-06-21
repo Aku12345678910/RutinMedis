@@ -1,7 +1,7 @@
-import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from 'expo-linear-gradient'; // ✅ Tambah ini
 import { useRouter } from "expo-router";
 import { useEffect, useRef } from "react";
-import { Animated, StyleSheet, Text, View } from "react-native";
+import { Animated, Image, StyleSheet } from "react-native";
 
 export default function SplashScreen() {
   const router = useRouter();
@@ -31,7 +31,10 @@ export default function SplashScreen() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={['#F5F7FA','#34B8A2']} 
+      style={styles.container}
+    >
       <Animated.View
         style={[
           styles.iconContainer,
@@ -41,28 +44,22 @@ export default function SplashScreen() {
           },
         ]}
       >
-        <Ionicons name="medical" size={100} color="white" />
-        <Text style={styles.appName}>MedRemind</Text>
+        <Image
+          source={require('../assets/logo.png')}
+          style={{ width: 200, height: 200, resizeMode: 'contain' }}
+        />
       </Animated.View>
-    </View>
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#4CAF50",
     alignItems: "center",
     justifyContent: "center",
   },
   iconContainer: {
     alignItems: "center",
-  },
-  appName: {
-    color: "white",
-    fontSize: 32,
-    fontWeight: "bold",
-    marginTop: 20,
-    letterSpacing: 1,
   },
 });

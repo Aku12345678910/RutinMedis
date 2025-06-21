@@ -37,15 +37,15 @@ const QUICK_ACTIONS = [
     icon: "add-circle-outline" as const,
     label: "Add\nMedication",
     route: "/medications/add" as const,
-    color: "#2E7D32",
-    gradient: ["#4CAF50", "#2E7D32"] as [string, string],
+    color: "#34B8A2",
+    gradient: ["#34B8A2", "#34B8A2"] as [string, string],
   },
   {
     icon: "calendar-outline" as const,
     label: "Calendar\nView",
-    route: "/calendar" as const,
-    color: "#1976D2",
-    gradient: ["#2196F3", "#1976D2"] as [string, string],
+    route: "/calender" as const,
+    color: "#74C2E1",
+    gradient: ["#74C2E1", "#74C2E1"] as [string, string],
   },
   {
     icon: "time-outline" as const,
@@ -249,7 +249,7 @@ export default function HomeScreen() {
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <LinearGradient colors={["#1a8e2d", "#146922"]} style={styles.header}>
+      <LinearGradient colors={["#34B8A2", "#34B8A2","#F5F7FA"]} style={styles.header}>
         <View style={styles.headerContent}>
           <View style={styles.headerTop}>
             <View style={styles.flex1}>
@@ -501,11 +501,11 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#1a1a1a",
+    color: "#1F355E",
     marginBottom: 5,
   },
   seeAllButton: {
-    color: "#2E7D32",
+    color: "#34B8A2",
     fontWeight: "600",
   },
   doseCard: {
@@ -536,12 +536,12 @@ const styles = StyleSheet.create({
   medicineName: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#333",
+    color: "#1F355E",
     marginBottom: 4,
   },
   dosageInfo: {
     fontSize: 14,
-    color: "#666",
+    color: "#1F355E",
     marginBottom: 4,
   },
   doseTime: {
@@ -550,7 +550,7 @@ const styles = StyleSheet.create({
   },
   timeText: {
     marginLeft: 5,
-    color: "#666",
+    color: "#1F355E",
     fontSize: 14,
   },
   takeDoseButton: {
@@ -609,7 +609,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 2,
-    borderColor: "#146922",
+    borderColor: "#34B8A2",
     paddingHorizontal: 4,
   },
   notificationCount: {
@@ -652,14 +652,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 15,
     borderRadius: 12,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#F5F7FA",
     marginBottom: 10,
   },
   notificationIcon: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: "#E8F5E9",
+    backgroundColor: "#F5F7FA",
     justifyContent: "center",
     alignItems: "center",
     marginRight: 15,
@@ -670,12 +670,12 @@ const styles = StyleSheet.create({
   notificationTitle: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#333",
+    color: "#1F355E",
     marginBottom: 4,
   },
   notificationMessage: {
     fontSize: 14,
-    color: "#666",
+    color: "#1F355E",
     marginBottom: 4,
   },
   notificationTime: {
@@ -691,7 +691,7 @@ const styles = StyleSheet.create({
   },
   emptyStateText: {
     fontSize: 16,
-    color: "#666",
+    color: "#1F355E",
     marginTop: 10,
     marginBottom: 20,
   },
@@ -708,14 +708,14 @@ const styles = StyleSheet.create({
   takenBadge: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#E8F5E9",
+    backgroundColor: "#F5F7FA",
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 12,
     marginLeft: 10,
   },
   takenText: {
-    color: "#4CAF50",
+    color: "#34B8A2",
     fontWeight: "600",
     fontSize: 14,
     marginLeft: 4,

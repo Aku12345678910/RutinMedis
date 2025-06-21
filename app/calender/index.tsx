@@ -159,7 +159,7 @@ export default function CalendarScreen() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={["#1a8e2d", "#146922"]}
+        colors={["#34B8A2", "#34B8A2", "#6DD44B"]}
         style={styles.headerGradient}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}

@@ -4,18 +4,18 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React, { useCallback, useState } from "react";
 import {
-    Alert,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Alert,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import {
-    getMedications,
-    Medication,
-    updateMedication,
+  getMedications,
+  Medication,
+  updateMedication,
 } from "../../utils/storage";
 
 export default function RefillTrackerScreen() {
@@ -76,8 +76,8 @@ export default function RefillTrackerScreen() {
     } else {
       return {
         status: "Good",
-        color: "#4CAF50",
-        backgroundColor: "#E8F5E9",
+        color: "#6DD44B",
+        backgroundColor: "#33B8A2",
       };
     }
   };
@@ -85,7 +85,7 @@ export default function RefillTrackerScreen() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={["#1a8e2d", "#146922"]}
+        colors={["#34B8A2", "#6DD44B"]}
         style={styles.headerGradient}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
@@ -200,7 +200,7 @@ export default function RefillTrackerScreen() {
                       styles.refillButton,
                       {
                         backgroundColor:
-                          supplyPercentage < 100 ? medication.color : "#e0e0e0",
+                          supplyPercentage < 100 ? medication.color : "#F5F7FA",
                       },
                     ]}
                     onPress={() => handleRefill(medication)}
@@ -221,7 +221,7 @@ export default function RefillTrackerScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#F5F7FA",
   },
   headerGradient: {
     position: "absolute",
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: "#000",
+    shadowColor: "#1F355E",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -270,8 +270,8 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 16,
     borderWidth: 1,
-    borderColor: "#e0e0e0",
-    shadowColor: "#000",
+    borderColor: "#F5F7FA",
+    shadowColor: "#1F355E",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.05,
     shadowRadius: 8,
@@ -294,12 +294,12 @@ const styles = StyleSheet.create({
   medicationName: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#333",
+    color: "#1F355E",
     marginBottom: 4,
   },
   medicationDosage: {
     fontSize: 14,
-    color: "#666",
+    color: "#1F355E",
   },
   statusBadge: {
     paddingHorizontal: 12,
@@ -321,19 +321,19 @@ const styles = StyleSheet.create({
   },
   supplyLabel: {
     fontSize: 14,
-    color: "#666",
+    color: "#1F355E",
   },
   supplyValue: {
     fontSize: 14,
     fontWeight: "600",
-    color: "#333",
+    color: "#1F355E",
   },
   progressBarContainer: {
     marginBottom: 8,
   },
   progressBarBackground: {
     height: 8,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#6DD44B",
     borderRadius: 4,
     overflow: "hidden",
   },
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
   },
   progressText: {
     fontSize: 12,
-    color: "#666",
+    color: "#1F355E",
     marginTop: 4,
     textAlign: "right",
   },
@@ -352,11 +352,11 @@ const styles = StyleSheet.create({
   },
   refillLabel: {
     fontSize: 12,
-    color: "#666",
+    color: "#1F355E",
   },
   lastRefillDate: {
     fontSize: 12,
-    color: "#666",
+    color: "#1F355E",
     marginTop: 2,
   },
   refillButton: {
@@ -378,12 +378,12 @@ const styles = StyleSheet.create({
   },
   emptyStateText: {
     fontSize: 16,
-    color: "#666",
+    color: "#1F355E",
     marginTop: 10,
     marginBottom: 20,
   },
   addButton: {
-    backgroundColor: "#1a8e2d",
+    backgroundColor: "#34B8A2",
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 20,
