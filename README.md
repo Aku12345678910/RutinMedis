@@ -1,50 +1,27 @@
-# Welcome to your Expo app 👋
+# 💊 RutinMedis – Aplikasi Pengingat Obat Harian
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Tampilan Aplikasi](assets/poster%20app.png)
 
-## Get started
+*Gambar: Tampilan antarmuka aplikasi RutinMedis yang intuitif dan user-friendly.*
 
-1. Install dependencies
+## 📌 Deskripsi  
+**RutinMedis** adalah aplikasi mobile berbasis React Native + Expo yang dirancang untuk membantu pengguna mengelola konsumsi obat harian secara teratur. Aplikasi ini cocok untuk pengguna yang memiliki jadwal minum obat yang konsisten, seperti penderita penyakit kronis, lansia, atau siapa pun yang ingin menjaga kepatuhan terhadap pengobatan.
 
-   ```bash
-   npm install
-   ```
+## 🔑 Fitur Utama
+- **Autentikasi** – Onboarding & login aman  
+- **Manajemen Obat** – Tambah, jadwal, dan catatan obat  
+- **Pengingat Otomatis** – Notifikasi sesuai jadwal  
+- **Monitoring Harian** – Progress konsumsi harian  
+- **Riwayat Konsumsi** – Kalender & histori penggunaan  
+- **Pengingat Refill** – Lacak stok dan peringatan isi ulang  
+- **UI Visual** – Tampilan progres, form input, dan antarmuka kalender yang bersih
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 📱 Teknologi Digunakan
+- React Native (Expo)
+- React Navigation
+- Expo Notifications
+- Expo Router
+- Context API untuk state management
+- SQLite / AsyncStorage untuk penyimpanan lokal
